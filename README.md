@@ -4,7 +4,9 @@
 
 This project is not completed yet. Primeiramente estou fazendo as telas do app
 
-First the SignIn and SignUp screens:
+##
 
 SignIn & SignUp
+
+![Sign In](https://github.com/KaduComC/tcc/blob/master/telas/screen_signIn.jpeg), ![Sign In](https://github.com/KaduComC/tcc/blob/master/telas/screen_signUp.jpeg)
 
