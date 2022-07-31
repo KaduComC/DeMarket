@@ -4,7 +4,7 @@
 
 This project is not completed yet. Primeiramente estou fazendo as telas do app
 
-Primeiro as telas de SignIn e SignUp:
+First the SignIn and SignUp screens:
 
 SignIn & SignUp
 
