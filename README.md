@@ -1,4 +1,4 @@
-# Flutter Supermarket Delivery
+# Dart / Flutter Supermarket Delivery
 
 ## Getting Started
 
