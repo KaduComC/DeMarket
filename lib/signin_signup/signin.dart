@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../main/dashboard.dart';
+import '../main/home.dart';
+import '../models/iconsLoginFaceGoogle.dart';
+import '../models/in_upBottom.dart';
+
 class Signin extends StatefulWidget {
   const Signin({Key? key}) : super(key: key);
 
@@ -22,7 +27,7 @@ class _SigninState extends State<Signin> {
             height: 350,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/undraw_Sign_in_re_o58h.png'),
+                image: AssetImage('assetes/images/undraw_Sign_in_re_o58h.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -59,11 +64,11 @@ class _SigninState extends State<Signin> {
                     ),
                     filled: true,
                     prefixIcon: Icon(
-                      Icons.phone,
+                      Icons.alternate_email,
                       color: Color(0xFF510C83),
                       size: 20,
                     ),
-                    hintText: "Número de telefone",
+                    hintText: "E-mail",
                   ),
                 ),
               ),
@@ -130,7 +135,10 @@ class _SigninState extends State<Signin> {
               const SizedBox(
                 height: 5,
               ),
-              const SignInButtonWidget(),
+              SignIn_UpButtonWidget(
+                text: "SIGN IN",
+                widgetChild: () => _showPageHome(context),
+              ),
               const SizedBox(
                 height: 5,
               ),
@@ -174,141 +182,9 @@ class _SigninState extends State<Signin> {
       ),
     );
   }
-}
 
-class SignInButtonWidget extends StatelessWidget {
-  const SignInButtonWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 60.0,
-      width: 350.0,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(30.0)),
-        gradient: LinearGradient(
-            colors: [Color(0xFF2A0845), Color(0xFF6441A5)],
-            begin: FractionalOffset(0.2, 0.2),
-            end: FractionalOffset(1.0, 1.0),
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp),
-      ),
-      child: MaterialButton(
-        highlightColor: Colors.transparent,
-        splashColor: Colors.deepPurple,
-        child: const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 42.0),
-          child: Text("SIGN IN",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-              ),),
-        ),
-        onPressed: () => {},
-      ),
-    );
-  }
-}
-
-class FacebookGoogleLogin extends StatelessWidget {
-  const FacebookGoogleLogin({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 10.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [
-                        Colors.black12,
-                        Colors.black54,
-                      ],
-                      begin: FractionalOffset(0.0, 0.0),
-                      end: FractionalOffset(1.0, 1.0),
-                      stops: [0.0, 1.0],
-                      tileMode: TileMode.clamp),
-                ),
-                width: 130.0,
-                height: 2.0,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: Text(
-                  "Ou",
-                  style: TextStyle(
-                    color: Color(0xFF2c2b2b),
-                    fontSize: 16.0,
-                  ),
-                ),
-              ),
-              Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [
-                        Colors.black54,
-                        Colors.black12,
-                      ],
-                      begin: FractionalOffset(0.0, 0.0),
-                      end: FractionalOffset(1.0, 1.0),
-                      stops: [0.0, 1.0],
-                      tileMode: TileMode.clamp),
-                ),
-                width: 130.0,
-                height: 2.0,
-              ),
-            ],
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0, right: 40.0),
-              child: GestureDetector(
-                onTap: () => {},
-                child: Container(
-                  padding: const EdgeInsets.all(15.0),
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF2A0845), Color(0xFF6441A5)],
-                    ),
-                  ),
-                  child: const Icon(
-                    FontAwesomeIcons.facebookF,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: GestureDetector(
-                onTap: () => {},
-                child: Container(
-                  padding: const EdgeInsets.all(15.0),
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF2A0845), Color(0xFF6441A5)],
-                    ),
-                  ),
-                  child: const Icon(
-                    FontAwesomeIcons.google,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
+  void _showPageHome(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Home()));
   }
 }
