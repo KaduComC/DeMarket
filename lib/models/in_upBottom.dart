@@ -24,11 +24,11 @@ class SignIn_UpButtonWidget extends StatelessWidget {
       child: MaterialButton(
         highlightColor: Colors.transparent,
         splashColor: Colors.deepPurple,
-        child: const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 42.0),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 42.0),
           child: Text(
-            "SIGN UP",
-            style: TextStyle(
+            text,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,
             ),

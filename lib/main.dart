@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tcc/screen/meusDados.dart';
 import 'package:tcc/signin_signup/first_screen.dart';
 
 import 'package:tcc/signin_signup/signin.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const First(),
+      home: const MyData(),
     );
   }
 }
