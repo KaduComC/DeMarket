@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'home.dart';
 
-// import '../../../../../Users/cadua/Documents/Project_Flutter/Projeto/Main_Pages/home.dart';
-
 class Dashboard extends StatefulWidget {
-  const Dashboard({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -30,6 +28,33 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   // title: const Padding(
+      //   //   padding: EdgeInsets.only(left: 1.0),
+      //   //   child: Text(
+      //   //     "Boas compras!",
+      //   //     style: TextStyle(
+      //   //       fontSize: 22.0,
+      //   //       color: Colors.black,
+      //   //     ),
+      //   //   ),
+      //   // ),
+      //   elevation: 0,
+      //   backgroundColor: Colors.grey[100],
+      //   actions: <Widget>[
+      //     Padding(
+      //       padding: const EdgeInsets.only(right: 15.0),
+      //       child: IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(
+      //           Icons.shopping_cart_outlined,
+      //           color: Color(0xFF510C83),
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      //   systemOverlayStyle: SystemUiOverlayStyle.dark,
+      // ),
       body: PageView(
         controller: pageController,
         onPageChanged: (index) {
@@ -45,6 +70,7 @@ class _DashboardState extends State<Dashboard> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -55,18 +81,20 @@ class _DashboardState extends State<Dashboard> {
             label: 'Buscar',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
-              label: 'Carrinho',
-              activeIcon: Icon(Icons.shopping_cart_sharp)),
+            icon: Icon(Icons.shopping_cart_outlined),
+            label: 'Carrinho',
+            activeIcon: Icon(Icons.shopping_cart_sharp),
+          ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
+            icon: Icon(Icons.account_circle_outlined),
             label: 'Usuário',
-            activeIcon: Icon(Icons.person),
+            activeIcon: Icon(Icons.account_circle),
           ),
         ],
+        type: BottomNavigationBarType.fixed,
         currentIndex: _indexScreen,
         unselectedItemColor: Colors.grey.shade600,
-        selectedItemColor: Colors.deepOrange,
+        selectedItemColor: const Color(0xFF510C83),
         onTap: _onItemTapped,
       ),
     );

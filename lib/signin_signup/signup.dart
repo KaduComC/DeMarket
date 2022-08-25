@@ -204,7 +204,7 @@ class _SignupState extends State<Signup> {
             height: 350,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assetes/images/undraw_Login_re_4vu2.png'),
+                image: AssetImage('assets/images/undraw_Login_re_4vu2.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -216,6 +216,6 @@ class _SignupState extends State<Signup> {
 
   void _showPageHome(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const Home()));
+        context, MaterialPageRoute(builder: (context) => const Dashboard()));
   }
 }

@@ -27,7 +27,7 @@ class _SigninState extends State<Signin> {
             height: 350,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assetes/images/undraw_Sign_in_re_o58h.png'),
+                image: AssetImage('assets/images/undraw_Sign_in_re_o58h.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -185,6 +185,6 @@ class _SigninState extends State<Signin> {
 
   void _showPageHome(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const Home()));
+        context, MaterialPageRoute(builder: (context) => const Dashboard()));
   }
 }

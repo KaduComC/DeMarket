@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.1.0
   simple_animations: ^4.2.0
+  page_transition: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -61,13 +62,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assetes/images/under-construction.jpg
-     - assetes/images/undraw_delivery_truck_vt6p.png
-     - assetes/images/undraw_Deliveries_2r4y.png
-     - assetes/images/undraw_Sign_in_re_o58h.png
-     - assetes/images/undraw_Login_re_4vu2.png
-     - assetes/images/undraw_empty_cart_co35.png
-     - assetes/images/undraw_Profile_data_re_v81r.png
+     - assets/images/under-construction.jpg
+     - assets/images/undraw_delivery_truck_vt6p.png
+     - assets/images/undraw_Deliveries_2r4y.png
+     - assets/images/undraw_Sign_in_re_o58h.png
+     - assets/images/undraw_Login_re_4vu2.png
+     - assets/images/undraw_empty_cart_co35.png
+     - assets/images/undraw_Profile_data_re_v81r.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -81,9 +82,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
+#  fonts:
+#     - family: Roboto
+#       fonts:
+#         - asset: assets/fonts/Roboto/Roboto-MediumItalic.ttf
+#           weight: 400
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

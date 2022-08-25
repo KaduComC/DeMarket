@@ -36,21 +36,17 @@ class _FirstState extends State<First> {
             width: 900,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assetes/images/undraw_empty_cart_co35.png'),
+                image: AssetImage('assets/images/undraw_empty_cart_co35.png'),
                 fit: BoxFit.fill,
               ),
             ),
           ),
-          const SizedBox(
-            height: 25,
-          ),
+          const SizedBox(height: 25),
           SignIn_UpButtonWidget(
             text: "SIGN IN",
             widgetChild: () => _showPageIn(context),
           ),
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15),
           SignIn_UpButtonWidget(
             text: "SIGN UP",
             widgetChild: () => _showPageUp(context),
