@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../my_flutter_app_icons.dart';
 import 'home.dart';
 
 class Dashboard extends StatefulWidget {
@@ -77,13 +78,14 @@ class _DashboardState extends State<Dashboard> {
               label: 'Home',
               activeIcon: Icon(Icons.home)),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Buscar',
+            icon: Icon(MyFlutterApp.th_list_outline),
+            label: 'Lista',
+            activeIcon: Icon(MyFlutterApp.th_list),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: 'Carrinho',
-            activeIcon: Icon(Icons.shopping_cart_sharp),
+            icon: Icon(Icons.shopping_basket_outlined),
+            label: 'Cesta',
+            activeIcon: Icon(Icons.shopping_basket),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),

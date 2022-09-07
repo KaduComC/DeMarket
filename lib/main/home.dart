@@ -1,4 +1,7 @@
+import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:flutter/material.dart';
+
+import 'frutas.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -8,6 +11,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  TextEditingController textController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,8 +22,16 @@ class _HomeState extends State<Home> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              AnimSearchBar(
+                  width: 400,
+                  textController: textController,
+                  onSuffixTap:  () {
+                    setState(() {
+                      textController.clear();
+                    });
+                  }),
               const Padding(
-                padding: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 15.0),
+                padding: EdgeInsets.only(top: 5.0, bottom: 20.0, left: 15.0),
                 child: Text(
                   "Categorias",
                   style: TextStyle(fontSize: 30.0),

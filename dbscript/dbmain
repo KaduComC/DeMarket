@@ -1,0 +1,30 @@
+DELETE FROM usuario WHERE nome = 'Bruna';
+
+
+UPDATE usuario 
+	SET cpf = '55544433321' 
+	WHERE nome = 'Bruna' or id = 1;
+
+SELECT nome, nascimento, cpf FROM usuario WHERE nome = 'Bruna';
+
+
+
+INSERT INTO usuario(nome, apelido, nascimento, 
+					cpf, email,  telefone, senha)
+	VALUES ('Bruna', 'Bru', '2000-08-07', '11122233345', 
+			'bruna@gmail.com', '11222223333', '123456789');
+
+
+CREATE TABLE IF NOT EXISTS usuario(
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,
+	apelido VARCHAR(50) NOT NULL,
+	nascimento DATE NOT NULL,
+	cpf VARCHAR(11) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	telefone VARCHAR(11) NOT NULL,
+	senha VARCHAR(100) NOT NULL
+);
+
+DROP TABLE usuario;
+
