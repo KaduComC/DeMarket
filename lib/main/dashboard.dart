@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 
-import '../my_flutter_app_icons.dart';
-import 'home.dart';
+import '../models/my_flutter_app_icons.dart';
+import 'optionsBar/home.dart';
+import 'optionsBar/search.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -65,9 +66,6 @@ class _DashboardState extends State<Dashboard> {
         },
         children: const <Widget>[
           Home(),
-          // Pesquisar(),
-          // Cart(),
-          // User(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -81,6 +79,10 @@ class _DashboardState extends State<Dashboard> {
             icon: Icon(MyFlutterApp.th_list_outline),
             label: 'Lista',
             activeIcon: Icon(MyFlutterApp.th_list),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Busca',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_basket_outlined),

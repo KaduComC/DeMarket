@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:tcc/main/home.dart';
-import 'package:tcc/signin_signup/signin.dart';
-import 'package:tcc/signin_signup/signup.dart';
+import 'package:tcc/main/optionsBar/home.dart';
 
 import '../models/in_upBottom.dart';
+import 'SignIn.dart';
+import 'SignUp.dart';
 
-class First extends StatefulWidget {
-  const First({Key? key}) : super(key: key);
+class SignUpIn extends StatefulWidget {
+  const SignUpIn({Key? key}) : super(key: key);
 
   @override
-  State<First> createState() => _FirstState();
+  State<SignUpIn> createState() => _SignUpInState();
 }
 
-class _FirstState extends State<First> {
+class _SignUpInState extends State<SignUpIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,11 +23,11 @@ class _FirstState extends State<First> {
           const Padding(
             padding: EdgeInsets.only(top: 60.0),
             child: Text(
-              "TCC PROJECT",
+              "DeMarket",
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 50,
-                color: Color(0xFF510C83),
+                color: Color(0xFF2A0845),
               ),
             ),
           ),
@@ -58,11 +58,11 @@ class _FirstState extends State<First> {
 
   void _showPageIn(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const Signin()));
+        context, MaterialPageRoute(builder: (context) => const SignIn()));
   }
 
   void _showPageUp(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const Signup()));
+        context, MaterialPageRoute(builder: (context) => const SignUp()));
   }
 }

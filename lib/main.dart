@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tcc/screen/meusDados.dart';
-import 'package:tcc/signin_signup/first_screen.dart';
-
-import 'package:tcc/signin_signup/signin.dart';
-import 'package:tcc/signin_signup/signup.dart';
-import 'main/dashboard.dart';
-import 'main/home.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tcc/signin_signup/SignUpIn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,11 +14,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'DeMarket',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const First(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [const Locale('pt', 'BR')],
+      home: const SignUpIn(),
     );
   }
 }

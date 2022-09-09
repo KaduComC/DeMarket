@@ -1,5 +1,5 @@
 name: tcc
-description: A new Flutter project.
+description: A new Supermarket Delivery.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -29,7 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_localizations:
+    sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -38,10 +39,21 @@ dependencies:
   simple_animations: ^5.0.0+2
   page_transition: ^2.0.9
   anim_search_bar: ^2.0.2
+  flutter_svg: ^1.1.4
+  intl: ^0.17.0
+  material_floating_search_bar: ^0.3.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/launcher.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/logo_for.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -70,6 +82,7 @@ flutter:
      - assets/images/undraw_Login_re_4vu2.png
      - assets/images/undraw_empty_cart_co35.png
      - assets/images/undraw_Profile_data_re_v81r.png
+     - assets/images/undraw_chore_list.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
