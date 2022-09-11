@@ -42,6 +42,7 @@ dependencies:
   flutter_svg: ^1.1.4
   intl: ^0.17.0
   material_floating_search_bar: ^0.3.7
+  masked_text_field: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +84,7 @@ flutter:
      - assets/images/undraw_empty_cart_co35.png
      - assets/images/undraw_Profile_data_re_v81r.png
      - assets/images/undraw_chore_list.svg
+     - assets/images/fish.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

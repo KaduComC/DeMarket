@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:masked_text_field/masked_text_field.dart';
 import 'package:intl/intl.dart';
+import 'package:tcc/signin_signup/SignIn.dart';
 
 import '../main/dashboard.dart';
 import '../models/in_upBottom.dart';
@@ -13,6 +15,14 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   bool _escondePass = true;
+
+  TextEditingController nomeController = TextEditingController();
+  TextEditingController apelidoController = TextEditingController();
+  TextEditingController nascimentoController = TextEditingController();
+  TextEditingController cpfController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController telefoneController = TextEditingController();
+  TextEditingController senhaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,15 +62,17 @@ class _SignUpState extends State<SignUp> {
                 color: Colors.white,
               ),
               child: Column(
-                children: <Widget>[
+                children:
+                <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 30.0, left: 15.0, right: 15.0),
                     child: Row(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Flexible(
                           flex: 1,
                           child: TextField(
+                            controller: nomeController,
                             showCursor: true,
                             keyboardType: TextInputType.name,
                             decoration: InputDecoration(
@@ -72,7 +84,8 @@ class _SignUpState extends State<SignUp> {
                                 ),
                               ),
                               filled: true,
-                              hintText: "Nome",
+                              labelText: 'Nome',
+                              // hintText: "Nome",
                             ),
                           ),
                         ),
@@ -82,6 +95,7 @@ class _SignUpState extends State<SignUp> {
                         Flexible(
                           flex: 1,
                           child: TextField(
+                            controller: apelidoController,
                             showCursor: true,
                             keyboardType: TextInputType.name,
                             decoration: InputDecoration(
@@ -93,7 +107,8 @@ class _SignUpState extends State<SignUp> {
                                 ),
                               ),
                               filled: true,
-                              hintText: "Apelido",
+                              labelText: 'Apelido',
+                              // hintText: "Apelido",
                             ),
                           ),
                         ),
@@ -105,7 +120,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 10.0, left: 15.0, right: 15.0),
+                        top: 5.0, left: 15.0, right: 15.0),
                     child: Row(
                       children: <Widget>[
                         Flexible(
@@ -142,7 +157,7 @@ class _SignUpState extends State<SignUp> {
                                         onPrimary: Colors.white,
                                         // header text color
                                         onSurface:
-                                        Colors.black, // body text color
+                                            Colors.black, // body text color
                                       ),
                                     ),
                                     child: child!,
@@ -153,7 +168,7 @@ class _SignUpState extends State<SignUp> {
                               if (pickedDate != null) {
                                 print(pickedDate);
                                 String dateFormat =
-                                DateFormat('dd-MM-yyyy').format(pickedDate);
+                                    DateFormat('dd-MM-yyyy').format(pickedDate);
                                 print(dateFormat);
 
                                 // setState(() {
@@ -170,20 +185,25 @@ class _SignUpState extends State<SignUp> {
                         ),
                         Flexible(
                           flex: 1,
-                          child: TextField(
-                            showCursor: true,
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
+                          child: MaskedTextField(
+                            inputDecoration: InputDecoration(
+                              hintText: '000.000.000-00',
+                              labelText: 'CPF',
+                              counterText: '',
                               border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black),
                                 borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    (30.0),
-                                  ),
+                                  Radius.circular(30.0),
                                 ),
                               ),
                               filled: true,
-                              hintText: "CPF",
                             ),
+                            autofocus: false,
+                            mask: 'xxx.xxx.xxx-xx',
+                            maxLength: 14,
+                            keyboardType: TextInputType.number,
+                            textFieldController: cpfController,
+                            onChange: (value) => (value),
                           ),
                         ),
                       ],
@@ -192,9 +212,10 @@ class _SignUpState extends State<SignUp> {
                   const SizedBox(
                     height: 15,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: 5.0, left: 15.0, right: 15.0),
                     child: TextField(
+                      controller: emailController,
                       showCursor: true,
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: true,
@@ -213,34 +234,39 @@ class _SignUpState extends State<SignUp> {
                             color: Color(0xFF2A0845),
                             size: 20.0,
                           ),
-                          hintText: "E-mail"),
+                          labelText: 'e-mail',
+                          hintText: 'nome@email.com'),
                     ),
                   ),
                   const SizedBox(
                     height: 15,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: 5.0, left: 15.0, right: 15.0),
-                    child: TextField(
-                      showCursor: true,
-                      keyboardType: TextInputType.phone,
-                      autocorrect: false,
-                      enableInteractiveSelection: false,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(
-                                (30.0),
-                              ),
-                            ),
+                    child: MaskedTextField(
+                      inputDecoration: InputDecoration(
+                        hintText: '(DDD) 00000-0000',
+                        labelText: 'Número de telefone',
+                        counterText: '',
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(30.0),
                           ),
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.phone,
-                            color: Color(0xFF2A0845),
-                            size: 20.0,
-                          ),
-                          hintText: "Número de telefone"),
+                        ),
+                        filled: true,
+                        prefixIcon: Icon(
+                          Icons.phone,
+                          color: Color(0xFF2A0845),
+                          size: 20.0,
+                        ),
+                      ),
+                      autofocus: false,
+                      mask: '(xx) xxxxx-xxxx',
+                      maxLength: 15,
+                      keyboardType: TextInputType.number,
+                      textFieldController: telefoneController,
+                      onChange: (value) => (value),
                     ),
                   ),
                   const SizedBox(
@@ -250,6 +276,7 @@ class _SignUpState extends State<SignUp> {
                     padding: const EdgeInsets.only(
                         top: 5.0, left: 15.0, right: 15.0),
                     child: TextField(
+                      controller: senhaController,
                       showCursor: true,
                       autocorrect: false,
                       enableInteractiveSelection: false,
@@ -286,12 +313,13 @@ class _SignUpState extends State<SignUp> {
                             );
                           },
                         ),
-                        hintText: "Senha",
+                        labelText: 'Senha',
+                        hintText: "********",
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 60,
                   ),
                   SignIn_UpButtonWidget(
                     text: "SIGN UP",
@@ -314,7 +342,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () => _showSignIN(context),
                   child: const Text(
                     "SIGN IN",
                     style: TextStyle(
@@ -331,9 +359,14 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
+
   void _showPageHome(BuildContext context) {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const Dashboard()));
   }
-}
 
+  void _showSignIN(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const SignIn()));
+  }
+}

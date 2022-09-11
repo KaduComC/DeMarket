@@ -10,17 +10,105 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   TextEditingController textController = TextEditingController();
-  final List<String> list = List.generate(10, (index) => "Text $index");
+
+  // final List<String> list = List.generate(10, (index) => "Text $index");
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(top: 30.0, bottom: 20.0, right: 150),
+                child: Text(
+                  "DeMarket",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 40,
+                    color: Color(0xFF2A0845),
+                  ),
+                ),
+              ),
+              Container(
+                width: 370,
+                height: 140,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0, bottom: 15.0, right: 170),
+                child: InkWell(
+                  onTap: () {},
+                  child: Wrap(
+                    direction: Axis.horizontal,
+                    children: <Widget>[
+                      const Text(
+                        "Categorias",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(Icons.arrow_forward_ios)
+                    ],
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: Row(
+                  children: <Widget>[
+                    Wrap(
+                      spacing: 10,
+                      children: <Widget>[
+                        Container(
+                          width: 200,
+                          height: 170,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/fish.png'),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 200,
+                          height: 170,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        Container(
+                          width: 200,
+                          height: 170,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        Container(
+                          width: 200,
+                          height: 170,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
 
-        ],
-      ),
+            ],
+          ),
+        )
     );
   }
 }

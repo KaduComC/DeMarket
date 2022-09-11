@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import '../../main/dashboard.dart';
 import '../../models/in_upBottom.dart';
 import '../models/iconsLoginFaceGoogle.dart';
+import 'SignUp.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -14,6 +15,9 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   bool _escondePass = true;
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController senhaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +67,10 @@ class _SignInState extends State<SignIn> {
                     fit: BoxFit.fill,
                   ),
                 ),),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: 5.0, left: 15.0, right: 15.0),
                     child: TextField(
+                      controller: emailController,
                       showCursor: true,
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: true,
@@ -84,7 +89,8 @@ class _SignInState extends State<SignIn> {
                             color: Color(0xFF2A0845),
                             size: 20.0,
                           ),
-                          hintText: "E-mail"),
+                          labelText: 'e-mail',
+                          hintText: 'nome@email.com'),
                     ),
                   ),
                   const SizedBox(
@@ -94,6 +100,7 @@ class _SignInState extends State<SignIn> {
                     padding: const EdgeInsets.only(
                         top: 5.0, left: 15.0, right: 15.0),
                     child: TextField(
+                      controller: senhaController,
                       showCursor: true,
                       autocorrect: false,
                       enableInteractiveSelection: false,
@@ -130,7 +137,8 @@ class _SignInState extends State<SignIn> {
                             );
                           },
                         ),
-                        hintText: "Senha",
+                        labelText: 'Senha',
+                        hintText: "********",
                       ),
                     ),
                   ),
@@ -174,7 +182,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () => _showSignUP(context),
                   child: const Text(
                     "SIGN UP",
                     style: TextStyle(
@@ -194,6 +202,11 @@ class _SignInState extends State<SignIn> {
   void _showPageHome(BuildContext context) {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const Dashboard()));
+  }
+
+  void _showSignUP(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const SignUp()));
   }
 }
 
