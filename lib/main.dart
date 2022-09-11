@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tcc/main/dashboard.dart';
 import 'package:tcc/signin_signup/SignUpIn.dart';
 
 void main() {

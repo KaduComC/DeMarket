@@ -17,99 +17,256 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(top: 30.0, bottom: 20.0, right: 150),
-                child: Text(
-                  "DeMarket",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 40,
-                    color: Color(0xFF2A0845),
+      child: Column(
+        children: <Widget>[
+          const Padding(
+            padding: EdgeInsets.only(top: 30.0, bottom: 20.0, right: 150),
+            child: Text(
+              "DeMarket",
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                fontSize: 40,
+                color: Color(0xFF2A0845),
+              ),
+            ),
+          ),
+          Container(
+            width: 370,
+            height: 140,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Container(
+              width: 370,
+              height: 240,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 15.0, bottom: 15.0, right: 150),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Wrap(
+                      direction: Axis.horizontal,
+                      children: <Widget>[
+                        const Text(
+                          "Categorias",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward_ios, color: Colors.black)
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                width: 370,
-                height: 140,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30.0, bottom: 15.0, right: 170),
-                child: InkWell(
-                  onTap: () {},
-                  child: Wrap(
-                    direction: Axis.horizontal,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
                     children: <Widget>[
-                      const Text(
-                        "Categorias",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      Wrap(
+                        spacing: 10,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                width: 200,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Nome',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                width: 200,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Nome',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                width: 200,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Nome',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                width: 200,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Nome',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                width: 200,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Nome',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15),
+                              )
+                            ],
+                          ),
+                        ],
                       ),
-                      Icon(Icons.arrow_forward_ios)
                     ],
                   ),
                 ),
+              ]),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Container(
+              width: 370,
+              height: 230,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 10, right: 10),
-                child: Row(
-                  children: <Widget>[
-                    Wrap(
-                      spacing: 10,
+              child: Column(children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 15.0, bottom: 15.0, right: 180),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Wrap(
+                      direction: Axis.horizontal,
                       children: <Widget>[
-                        Container(
-                          width: 200,
-                          height: 170,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/fish.png'),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 200,
-                          height: 170,
-                          decoration: BoxDecoration(
+                        const Text(
+                          "Popular",
+                          style: TextStyle(
                             color: Colors.black,
-                            borderRadius: BorderRadius.circular(20),
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Container(
-                          width: 200,
-                          height: 170,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        Container(
-                          width: 200,
-                          height: 170,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
+                        Icon(Icons.arrow_forward_ios, color: Colors.black)
                       ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-
-            ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
+                    children: <Widget>[
+                      Wrap(
+                        spacing: 10,
+                        children: <Widget>[
+                          Container(
+                            width: 200,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          Container(
+                            width: 200,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          Container(
+                            width: 200,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          Container(
+                            width: 200,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ]),
+            ),
           ),
-        )
-    );
+        ],
+      ),
+    ));
   }
 }
 

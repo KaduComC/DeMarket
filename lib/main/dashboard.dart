@@ -30,33 +30,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   // title: const Padding(
-      //   //   padding: EdgeInsets.only(left: 1.0),
-      //   //   child: Text(
-      //   //     "Boas compras!",
-      //   //     style: TextStyle(
-      //   //       fontSize: 22.0,
-      //   //       color: Colors.black,
-      //   //     ),
-      //   //   ),
-      //   // ),
-      //   elevation: 0,
-      //   backgroundColor: Colors.grey[100],
-      //   actions: <Widget>[
-      //     Padding(
-      //       padding: const EdgeInsets.only(right: 15.0),
-      //       child: IconButton(
-      //         onPressed: () {},
-      //         icon: const Icon(
-      //           Icons.shopping_cart_outlined,
-      //           color: Color(0xFF510C83),
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      //   systemOverlayStyle: SystemUiOverlayStyle.dark,
-      // ),
+      backgroundColor: Color(0xFFEEEEEE),
       body: PageView(
         controller: pageController,
         onPageChanged: (index) {
@@ -70,6 +44,7 @@ class _DashboardState extends State<Dashboard> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
+        backgroundColor: Color(0xFFEEEEEE),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
