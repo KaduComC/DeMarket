@@ -30,13 +30,15 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEEEEEE),
+      backgroundColor: Color(0xFFE5E5E5),
       body: PageView(
         controller: pageController,
         onPageChanged: (index) {
-          setState(() {
-            _indexScreen = index;
-          });
+          setState(
+            () {
+              _indexScreen = index;
+            },
+          );
         },
         children: const <Widget>[
           Home(),
@@ -44,7 +46,7 @@ class _DashboardState extends State<Dashboard> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
-        backgroundColor: Color(0xFFEEEEEE),
+        backgroundColor: Color(0xFFE5E5E5),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.home),

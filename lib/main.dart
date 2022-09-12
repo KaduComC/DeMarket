@@ -3,6 +3,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tcc/main/dashboard.dart';
 import 'package:tcc/signin_signup/SignUpIn.dart';
 
+import 'main/optionsBar/homeScreens/categories.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate
       ],
       supportedLocales: [const Locale('pt', 'BR')],
-      home: const SignUpIn(),
+      home: const Categorias(),
     );
   }
 }

@@ -1,5 +1,9 @@
 import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:tcc/main/optionsBar/homeScreens/categories.dart';
+
+import '../../models/categoriesModel.dart';
+import '../../models/popularModel.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,7 +20,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: SingleChildScrollView(
       child: Column(
         children: <Widget>[
           const Padding(
@@ -52,7 +55,7 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(
                       top: 15.0, bottom: 15.0, right: 150),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () => _showCategorias(context),
                     child: Wrap(
                       direction: Axis.horizontal,
                       children: <Widget>[
@@ -77,106 +80,11 @@ class _HomeState extends State<Home> {
                       Wrap(
                         spacing: 10,
                         children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                width: 200,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Nome',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 15),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                width: 200,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Nome',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 15),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                width: 200,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Nome',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 15),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                width: 200,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Nome',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 15),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                width: 200,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Nome',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 15),
-                              )
-                            ],
-                          ),
+                          Categoria(),
+                          Categoria(),
+                          Categoria(),
+                          Categoria(),
+                          Categoria(),
                         ],
                       ),
                     ],
@@ -194,107 +102,57 @@ class _HomeState extends State<Home> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Column(children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(
-                      top: 15.0, bottom: 15.0, right: 180),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Wrap(
-                      direction: Axis.horizontal,
-                      children: <Widget>[
-                        const Text(
-                          "Popular",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 15.0, bottom: 15.0, right: 180),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Wrap(
+                        direction: Axis.horizontal,
+                        children: <Widget>[
+                          const Text(
+                            "Popular",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
+                          Icon(Icons.arrow_forward_ios, color: Colors.black)
+                        ],
+                      ),
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      children: <Widget>[
+                        Wrap(
+                          spacing: 10,
+                          children: <Widget>[
+                            Popular(),
+                            Popular(),
+                            Popular(),
+                            Popular(),
+                          ],
                         ),
-                        Icon(Icons.arrow_forward_ios, color: Colors.black)
                       ],
                     ),
                   ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.only(left: 10, right: 10),
-                  child: Row(
-                    children: <Widget>[
-                      Wrap(
-                        spacing: 10,
-                        children: <Widget>[
-                          Container(
-                            width: 200,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          Container(
-                            width: 200,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          Container(
-                            width: 200,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          Container(
-                            width: 200,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ]),
+                ],
+              ),
             ),
           ),
         ],
       ),
-    ));
+    );
+  }
+
+  void _showCategorias(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Categorias()));
   }
 }
-
-// Widget makeCategory({title, onClick}) {
-//   return Material(
-//     type: MaterialType.transparency,
-//     child: InkWell(
-//       onTap: () => onClick(),
-//       child: Container(
-//         width: 150.0,
-//         margin: const EdgeInsets.only(right: 10, left: 10),
-//         decoration: BoxDecoration(
-//           color: const Color(0xFF613D9F),
-//           // color: Colors.grey[200],
-//
-//           borderRadius: BorderRadius.circular(20),
-//         ),
-//         child: Align(
-//           child: Text(
-//             title,
-//             style: const TextStyle(
-//               color: Colors.white,
-//               fontSize: 18,
-//               fontWeight: FontWeight.w100,
-//             ),
-//           ),
-//         ),
-//       ),
-//     ),
-//   );
-// }
